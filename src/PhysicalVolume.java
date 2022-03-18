@@ -5,14 +5,13 @@ public class PhysicalVolume {
     private int size;
     private String name;
     private UUID id;
-    public static ArrayList<PhysicalDrive> drive = new ArrayList<PhysicalDrive>;
+    public static ArrayList<PhysicalDrive> physicalDrivesArr;
     private PhysicalDrive pDrive;
 
     public PhysicalVolume(int size,String name){
         this.size = size;
         this.name = name;
         id = UUID.randomUUID();
-        drive.add(pDrive);
     }
 
     public String getName() {
@@ -29,5 +28,13 @@ public class PhysicalVolume {
 
     public int getpDriveSize() {
         return pDrive.getSize();
+    }
+
+    public PhysicalDrive getpDrive() {
+        return pDrive;
+    }
+
+    public static ArrayList<PhysicalDrive> getPhysicalDrivesArr() {
+        return physicalDrivesArr;
     }
 }
