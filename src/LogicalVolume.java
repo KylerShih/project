@@ -1,25 +1,18 @@
-import java.util.UUID;
-
-public class LogicalVolume {
+public class LogicalVolume extends Space{
     private int size;
-    private String name;
-    private UUID id;
+    private VolumeGroup volumeGroup;
 
-    public LogicalVolume(int size, String name){
+    public LogicalVolume(String name, int size, VolumeGroup VG) {
+        super(name);
         this.size = size;
-        this.name = name;
-        id = UUID.randomUUID();
+        this.volumeGroup = VG;
     }
 
     public int getSize() {
         return size;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public UUID getId() {
-        return id;
+    public VolumeGroup getVG() {
+        return volumeGroup;
     }
 }

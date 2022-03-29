@@ -1,4 +1,4 @@
-import java.util.ArrayList
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class VolumeGroup {
@@ -29,6 +29,27 @@ public class VolumeGroup {
         }
         return s - logicalVolumesArr.get(0).getSize();
     }
+    public void addPhysicalVolume(PhysicalVolume pv)
+    {
+        physicalVolumesArr.add(pv);
+    }
+
+    public void addLogicalVolume(LogicalVolume lv)
+    {
+        logicalVolumesArr.add(lv);
+    }
+
+    public int getAvailableSpace()
+    {
+        int use = 0;
+        size = getSize();
+        for(int n = 0; n < logicalVolumesArr.size(); n++)
+        {
+            use += logicalVolumesArr.get(n).getSize();
+        }
+        return size - use;
+    }
+
 
     public String getName() {
         return name;

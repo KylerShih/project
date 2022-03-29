@@ -1,14 +1,18 @@
-import java.util.UUID;
+public class PhysicalDrive {
+    private String name;
+    private int size;
 
-public class PhysicalDrive extends PhysicalVolume      {
-    private UUID id;
-    public PhysicalDrive(int size, String name){
-        super(size,name);
-        id = UUID.randomUUID();
+    public PhysicalDrive(String n, int s)
+    {
+        name = n;
+        size = s;
     }
 
-    public UUID getId() {
-        return super.getId();
+    public String getName() {
+        return name;
     }
 
+    public int getSize() {
+        return size;
+    }
 }

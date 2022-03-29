@@ -1,40 +1,33 @@
 import java.util.UUID;
 import java.util.ArrayList;
 
-public class PhysicalVolume {
+public class PhysicalVolume extends Space{
     private int size;
-    private String name;
     private UUID id;
-    public static ArrayList<PhysicalDrive> physicalDrivesArr;
-    private PhysicalDrive pDrive;
+    private VolumeGroup volumeGroup;
+    private PhysicalDrive hardDrive;
+    public boolean isDrive;
 
-    public PhysicalVolume(int size,String name){
+    public PhysicalVolume(int size,String name,PhysicalDrive hardDrive){
+        super(name);
         this.size = size;
-        this.name = name;
-        id = UUID.randomUUID();
+        isDrive = false;
+        this.hardDrive = hardDrive;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getSize() {
-        return size;
-    }
 
     public UUID getId() {
         return id;
     }
 
-    public int getpDriveSize() {
-        return pDrive.getSize();
+    public PhysicalDrive getHardDriverive() {
+        return hardDrive;
+    }
+    public VolumeGroup getVolumeGroup(){
+        return volumeGroup;
     }
 
-    public PhysicalDrive getpDrive() {
-        return pDrive;
-    }
-
-    public static ArrayList<PhysicalDrive> getPhysicalDrivesArr() {
-        return physicalDrivesArr;
+    public int getSize() {
+        return size;
     }
 }
