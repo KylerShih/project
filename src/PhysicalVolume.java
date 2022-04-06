@@ -20,7 +20,7 @@ public class PhysicalVolume extends Space{
         return id;
     }
 
-    public PhysicalDrive getHardDriverive() {
+    public PhysicalDrive getHardDrive() {
         return hardDrive;
     }
     public VolumeGroup getVolumeGroup(){
@@ -30,4 +30,15 @@ public class PhysicalVolume extends Space{
     public int getSize() {
         return size;
     }
+
+    public void setVolumeGroup(VolumeGroup volumeGroup)
+    {
+        isDrive = true;
+        this.volumeGroup = volumeGroup;
+    }
+    public boolean isDrive() {
+        return isDrive;
+    }
+
+
 }

@@ -58,6 +58,12 @@ public class VolumeGroup {
     public UUID getId() {
         return id;
     }
+    public boolean hasLogicalVolume(){
+        if(getLogicalVolumesArr().size()!=0){
+            return true;
+        }
+        return false;
+    }
 
     public static ArrayList<LogicalVolume> getLogicalVolumesArr() {
         return logicalVolumesArr;
